@@ -1,12 +1,126 @@
-# React + Vite
+# 📚 Student Study Planner (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and interactive **Study Planner Web App** built using **React**, **Context API**, and **React Hook Form**.
+This app allows users to create, view, and manage study sessions efficiently with persistent storage using **localStorage**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+* 📝 Add Study Sessions with:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  * Topic
+  * Subject (Dropdown)
+  * Duration (Max 10 minutes)
+  * Priority (High / Medium / Low)
+  * Date
+* 📋 View all sessions in a structured list
+* 🎨 Dynamic UI based on priority:
+
+  * 🔴 High → Red
+  * 🟡 Medium → Yellow
+  * 🟢 Low → Green
+* ❌ Delete sessions instantly
+* 🔄 Form resets after submission
+* 🔁 Toggle between Form and Session List
+
+---
+
+## 🧠 Tech Stack
+
+* **React.js**
+* **Context API** (Global State Management)
+* **React Hook Form** (Form Handling & Validation)
+* **Tailwind CSS** (Styling)
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+│
+├── context/
+│   └── StudyContext.jsx
+│
+├── components/
+│   ├── SessionForm.jsx
+│   ├── SessionList.jsx
+│   └── SessionCard.jsx
+│
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+## ⚙️ How It Works
+
+### 🔄 Data Flow
+
+```
+SessionForm → addSession() → Context
+Context → sessions → SessionList → SessionCard
+SessionCard → deleteSession()
+```
+
+---
+
+
+## ▶️ Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/study-planner.git
+cd study-planner
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the app
+
+```bash
+npm run dev
+```
+
+---
+
+## 📌 Validation Rules
+
+* Topic → Required
+* Subject → Required
+* Duration → 1 to 10 minutes
+* Priority → Required
+* Date → Required
+
+---
+
+## 🎯 Future Improvements
+
+* ✏️ Edit Session functionality
+* 🔍 Filter by priority/date
+* 📊 Dashboard analytics (total study time, stats)
+* 📱 Fully responsive UI
+* 🔔 Notifications/reminders
+
+---
+
+## 🙌 Acknowledgements
+
+This project is built as part of a learning task to understand:
+
+* React state management
+* Form handling
+* Component architecture
+* Real-world UI patterns
+
+---
+
+## 📃 License
+
+This project is open-source and free to use.
